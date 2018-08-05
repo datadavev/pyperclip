@@ -5,14 +5,19 @@ Pyperclip is a cross-platform Python module for copy and paste clipboard functio
 Al Sweigart al@inventwithpython.com
 BSD License
 
-Example Usage
-=============
+## Fork Info
+
+This fork includes the following changes:
+
+* OS X, support grabbing FileURL from clipboard, e.g. copy from finder.
+
+
+## Example Usage
 
     >>> import pyperclip
     >>> pyperclip.copy('The text to be copied to the clipboard.')
     >>> pyperclip.paste()
     'The text to be copied to the clipboard.'
-
 
 Currently only handles plaintext.
 

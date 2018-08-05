@@ -128,8 +128,14 @@ def init_osx_pyobjc_clipboard():
         board.setData_forType_(newData, AppKit.NSStringPboardType)
 
     def paste_osx_pyobjc():
-        "Returns contents of clipboard"
+        '''Returns contents of clipboard
+        DV: modified to retrieve Url or fileUrl if presented.
+        '''
         board = AppKit.NSPasteboard.generalPasteboard()
+        # file URL
+        content = board.stringForType_(AppKit.NSPasteboardTypeFileURL)
+        if not content is None:             
+            return content
         content = board.stringForType_(AppKit.NSStringPboardType)
         return content
 
